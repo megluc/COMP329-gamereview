@@ -7,7 +7,8 @@ import os
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import cross_val_score
+from sklearn.metrics import accuracy_score, classification_report
+from sklearn.model_selection import cross_val_predict, cross_val_score
 from sklearn.pipeline import Pipeline
 
 
@@ -57,9 +58,17 @@ def main(train_path: str, test_path: str, output_path: str):
     pipeline = build_pipeline()
 
     print('Training baseline TF-IDF classifier...')
-    scores = cross_val_score(pipeline, X_train, y_train, cv=5, scoring='f1', n_jobs=1)
-    print(f'5-fold F1 scores: {scores}')
-    print(f'Mean F1 score: {scores.mean():.4f}')
+    f1_scores = cross_val_score(pipeline, X_train, y_train, cv=5, scoring='f1', n_jobs=1)
+    accuracy_scores = cross_val_score(pipeline, X_train, y_train, cv=5, scoring='accuracy', n_jobs=1)
+    print(f'5-fold F1 scores: {f1_scores}')
+    print(f'Mean F1 score: {f1_scores.mean():.4f}')
+    print(f'5-fold accuracy scores: {accuracy_scores}')
+    print(f'Mean accuracy: {accuracy_scores.mean():.4f}')
+
+    cv_preds = cross_val_predict(pipeline, X_train, y_train, cv=5, n_jobs=1)
+    print('\nCross-validation classification report:')
+    print(classification_report(y_train, cv_preds, digits=4))
+    print(f'Overall cross-validation accuracy: {accuracy_score(y_train, cv_preds):.4f}')
 
     pipeline.fit(X_train, y_train)
 
