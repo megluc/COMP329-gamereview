@@ -1,14 +1,20 @@
 # COMP329-gamereview
-This project applies Natural Language Processing (NLP) and machine learning techniques to analyze and classify video game reviews. The main objective is to predict whether a user recommends a game based on their written review, while also gaining insight into sentiment patterns expressed in player feedback.
-
-The project establishes a baseline with a TF-IDF model to ensure significant results and actual learning from models.
-
-The project compares three different approaches: a non-neural machine learning model using Logistic Regression, and two deep learning models using a Convolutional Neural Network (CNN) and a Long Short-Term Memory (LSTM) network. These models process and learn from textual game reviews to classify sentiment as either positive (recommended) or negative (not recommended).
-
-Models Used:
-1. Logistic Regression
-
-2. Convolutional Neural Network (CNN)
-
-3. Long Short-Term Memory (LSTM)
+This project applies Natural Language Processing (NLP) and machine learning techniques to analyze and classify video game reviews. The main objective is to predict whether a user recommends a game based on their written review, while also gaining insight into sentiment patterns in player feedback.
+A TF-IDF baseline model is used to establish a benchmark performance and ensure meaningful comparison across models.
+Project Overview
+This project compares three different approaches for text classification:
+A traditional machine learning model (Logistic Regression)
+A Convolutional Neural Network (CNN)
+A Long Short-Term Memory (LSTM) network
+Each model processes textual game reviews and classifies sentiment as either:
+Positive (Recommended)
+Negative (Not Recommended)
+The goal is to evaluate how different machine learning approaches perform on sentiment classification and understand the trade-offs between traditional and deep learning methods.
+Models Used
+Logistic Regression (TF-IDF Baseline & Tuned Model)
+A traditional machine learning approach using TF-IDF features for text representation.
+Convolutional Neural Network (CNN)
+A deep learning model designed to capture local patterns and phrases in text.
+Long Short-Term Memory (LSTM)
+A recurrent neural network designed to capture sequential and contextual relationships in text.
 
