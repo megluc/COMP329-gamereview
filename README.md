@@ -21,6 +21,6 @@ A traditional machine learning approach using TF-IDF features for text represent
 2. Convolutional Neural Network (CNN)
 A deep learning model designed to capture local patterns and phrases in text.
 
-3.Long Short-Term Memory (LSTM)
+3. Long Short-Term Memory (LSTM)
 A recurrent neural network designed to capture sequential and contextual relationships in text.
 
