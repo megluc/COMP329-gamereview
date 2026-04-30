@@ -6,7 +6,7 @@ The project establishes a baseline with a TF-IDF model to ensure significant res
 The project compares three different approaches: a non-neural machine learning model using Logistic Regression, and two deep learning models using a Convolutional Neural Network (CNN) and a Long Short-Term Memory (LSTM) network. These models process and learn from textual game reviews to classify sentiment as either positive (recommended) or negative (not recommended).
 
 Models Used:
-1. Logistic Regression (Baseline Model)
+1. Logistic Regression
 
 2. Convolutional Neural Network (CNN)
 
